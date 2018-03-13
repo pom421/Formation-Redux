@@ -32,10 +32,10 @@ Use of Redux on a simple app
 
 ## URL client
 
-http://localhost:3000/
-http://localhost:3000/search
-http://localhost:3000/add
+- http://localhost:3000/
+- http://localhost:3000/search
+- http://localhost:3000/add
 
 ## URL serveur
 
-http://127.0.0.1:8090/albums
+- http://127.0.0.1:8090/albums
