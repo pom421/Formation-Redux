@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
+import { Link } from "react-router"
 import { searchSongs } from "../actions/actions"
+import ListComponent from "./ListComponent"
 
 class SearchComponent extends Component {
 
@@ -13,54 +15,46 @@ class SearchComponent extends Component {
         this.updateTerm = this.updateTerm.bind(this)
         this.search = this.search.bind(this)
 
-        this.songs = [
-            {
-                id: "songs_" + 1,
-                title: "God only knows",
-                category: "pop",
-                album: "Pet Sounds",
-                author: "The Beach Boys",
-                year: 1969
-            },
-            {
-                id: "songs_" + 2,
-                title: "Getting better",
-                category: "pop",
-                album: "Sergent Pepper's Lonely Hearts Club Band",
-                author: "The Beatles",
-                year: 1969
-            }
-        ]
     }
 
     updateTerm(e) {
         this.setState({ term: e.target.value })
     }
-    
+
     search() {
         if (this.state.term) {
             const regex = new RegExp(this.state.term, "gi")
-            
-            const songs = this.songs.filter(song => regex.test(song.title))
-            
+            const songs = this.props.allSongs.filter(song => regex.test(song.title))
+
             this.props.dispatch(
                 searchSongs(songs)
             )
-            
+
             this.setState({ term: "" })
         }
-        
+
     }
 
     render() {
         return (
             <div>
+                <p><Link to="/" >Retour</Link></p>
+
                 <input type="text" name="term" value={this.state.term} onChange={this.updateTerm} />
                 <button onClick={this.search}>OK</button>
+                <ListComponent {...this.props}></ListComponent>
             </div>
         )
     }
 }
 
-export default connect()(SearchComponent)
+function mapStateToProp(applicationState) {
+    return {
+        allSongs: applicationState.songsState,
+        songs: applicationState.searchState
+    }
+}
+
+
+export default connect(mapStateToProp)(SearchComponent)
 

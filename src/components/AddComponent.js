@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 
 function addSong() {
     console.log("clic sur add song")
-    this.props.dispatch(addSong())
     
 }
 

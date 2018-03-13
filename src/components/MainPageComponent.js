@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import SearchComponent from "./SearchComponent"
-import AddComponent from "./AddComponent"
+import AddFormPageComponent from "./AddFormPageComponent"
 import ConnectedListComponent from "../containers/ConnectedListComponent"
+import { Link } from "react-router"
 
 class MainPageComponent extends Component {
-
-  constructor(props) {
-    super(props)
-  
-  }
-
 
   render() {
       return (
           <div>
             <SearchComponent />
-            {/*<AddComponent /> */}
+            {/*<AddFormPageComponent />*/}
             <ConnectedListComponent />
         </div>
       )

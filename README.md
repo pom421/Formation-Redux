@@ -28,4 +28,14 @@ Use of Redux on a simple app
     author: "The Beach Boys",
     year: 1969
 },
-```js
+```
+
+## URL client
+
+http://localhost:3000/
+http://localhost:3000/search
+http://localhost:3000/add
+
+## URL serveur
+
+http://127.0.0.1:8090/albums
