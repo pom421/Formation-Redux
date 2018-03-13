@@ -15,7 +15,7 @@ class SearchComponent extends Component {
 
         this.songs = [
             {
-                id: "albums" + 1,
+                id: "songs_" + 1,
                 title: "God only knows",
                 category: "pop",
                 album: "Pet Sounds",
@@ -23,7 +23,7 @@ class SearchComponent extends Component {
                 year: 1969
             },
             {
-                id: "albums" + 2,
+                id: "songs_" + 2,
                 title: "Getting better",
                 category: "pop",
                 album: "Sergent Pepper's Lonely Hearts Club Band",
